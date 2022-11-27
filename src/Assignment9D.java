@@ -1,4 +1,3 @@
-package com.test;
 abstract class GeomatricObject{
     String color;
     float weight;
