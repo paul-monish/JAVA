@@ -15,8 +15,9 @@ class Stack {
 	void push(int n) {
 		if (top == max - 1) {
 			// System.out.println("STACK Overflow!");
-			max = 2 * max;
-			System.out.println("max size is =" + max);
+//			max = 2 * max;
+//			System.out.println("max size is =" + max);
+			doubleArray();
 
 			stk[++top] = n;
 		} else
@@ -30,7 +31,12 @@ class Stack {
 		else
 			n = stk[top--];
 	}
-
+	private void doubleArray(){
+		int tmp[]=stk;
+		stk=new int[2*tmp.length];
+		for(int i=0;i<=top;i++)
+			stk[i]=tmp[i];
+	}
 	void disp() {
 		for (int i = top; i >= 0; i--)
 			System.out.println(stk[i]);

@@ -14,11 +14,10 @@ interface DeviationInterface extends MeanInterface{
         float m=mean(a);
         float s=0.0f;
         for(int i:a){
-            s+=(m-i);
-            System.out.println(s);
+            s+=Math.pow((i-m),2);
         }
 
-        return (float)Math.sqrt(s)/(a.length-1);
+        return (float)Math.sqrt(s/(a.length));
     }
 }
 public class Assignment9G implements MeanInterface,DeviationInterface{
